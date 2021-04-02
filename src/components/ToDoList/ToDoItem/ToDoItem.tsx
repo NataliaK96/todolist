@@ -11,6 +11,8 @@ export const ToDoItem: React.FC<Props> = observer(({ done, text, id }) => (
     <Checkbox checked={done} onChange={() => {
       store.selectTask(id)}
       } />
-    <div>{text}</div>
+    <div>
+      {done ? (<del>{text}</del>) : text}
+      </div>
   </ListItem>
 ));

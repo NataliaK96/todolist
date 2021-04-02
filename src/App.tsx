@@ -5,13 +5,13 @@ import { ToDoList } from './components/ToDoList';
 import store from './store';
 import { Input } from '@material-ui/core';
 import { AddButton } from './components/Buttons';
-import { Footer, Header } from './App.styles';
+import { Header, NameApp } from './App.styles';
 
 function App() {
   const [name, setName] = useState<string>('');
   return (
     <div className="App">
-      <Header/>
+      <Header><NameApp>TODO</NameApp></Header>
       <Input
         onChange={(e) => {
           setName(e.currentTarget.value);
@@ -23,7 +23,6 @@ function App() {
           store.addTask(name);
         }}
       />
-      <Footer/>
     </div>
   );
 }
