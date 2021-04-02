@@ -14,3 +14,10 @@ font-weight: 500;
 align-items: center;
 margin-left: 5%;
 `
+export const Main = styled.div`
+margin-left: 5%;
+margin-top: 20px
+`
+export const AddField = styled.div`
+display: flex;
+`

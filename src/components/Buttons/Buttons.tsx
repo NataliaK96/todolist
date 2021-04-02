@@ -4,17 +4,21 @@ import AddIcon from '@material-ui/icons/Add';
 import { useStyles } from './Buttons.styles';
 
 type Props = {
-    onClick: ()=>void
-}
+  onClick: () => void;
+};
 
-export const AddButton: React.FC<Props> = ({onClick}) => {
+export const AddButton: React.FC<Props> = ({ onClick }) => {
   const classes = useStyles();
-
   return (
-      <div>
-        <Fab color="secondary" aria-label="add" className={classes.margin} onClick={onClick}>
-          <AddIcon />
-        </Fab>
-      </div>
+    <div>
+      <Fab
+        color="secondary"
+        aria-label="add"
+        className={classes.margin}
+        onClick={onClick}
+      >
+        <AddIcon />
+      </Fab>
+    </div>
   );
-}
+};
