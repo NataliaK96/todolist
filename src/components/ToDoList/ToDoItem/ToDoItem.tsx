@@ -1,13 +1,16 @@
-import { Checkbox, Typography } from 'antd';
+import { Checkbox, ListItem } from '@material-ui/core';
 import React from 'react';
 import { TToDo } from '../../../types';
-const { Text } = Typography;
+import store from '../../../store'
+import { observer } from 'mobx-react';
 
 type Props = TToDo;
 
-export const ToDoItem: React.FC<Props> = ({ done, text }) => (
-  <div>
-    <Checkbox checked={done} onChange={() => {}} />
-    <Text strong>{text}</Text>
-  </div>
-);
+export const ToDoItem: React.FC<Props> = observer(({ done, text, id }) => (
+  <ListItem>
+    <Checkbox checked={done} onChange={() => {
+      store.selectTask(id)}
+      } />
+    <div>{text}</div>
+  </ListItem>
+));
