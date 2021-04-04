@@ -10,7 +10,7 @@ type Props = {
 export const AddButton: React.FC<Props> = ({ onClick }) => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.button}>
       <Fab
         color="secondary"
         aria-label="add"

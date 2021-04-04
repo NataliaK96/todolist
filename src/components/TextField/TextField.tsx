@@ -12,11 +12,11 @@ export const MultilineTextFields: React.FC<Props> = ({onChange, value}) => {
   return (
         <TextField
           id="filled-textarea"
-          label="Новая задача"
-          placeholder="добавьте задачу"
+          label="New task"
+          placeholder="What you need to do"
           multiline
           variant="filled"
-          className={classes.margin}
+          className={classes.field}
           onChange={onChange}
           value={value}
         />  
