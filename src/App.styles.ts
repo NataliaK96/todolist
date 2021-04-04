@@ -18,12 +18,15 @@ margin-left: 5%;
 export const Main = styled.div`
 display: flex;
 flex-direction: column;
-margin: 20px 5%;
-height: 80vh;
+margin: 20px 5% 100px 5%;
+}
 `
 export const AddField = styled.div`
 display: flex;
 `
 
 export const ConfirmPanel = styled.div`
+display: flex;
+margin-right: 5%;
+align-items: center;
 `

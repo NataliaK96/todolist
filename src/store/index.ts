@@ -6,7 +6,8 @@ class Store {
     makeAutoObservable(this);
   }
 
- tasks: TToDo[] | null | undefined = null;
+ tasks: TToDo[] = [];
+ isShowTaskField: boolean = false;
 
   addTask = (text: string) => {
     const newTask: TToDo = {
@@ -23,16 +24,34 @@ class Store {
   };
 
   selectTask = (id: string) => {
-    const selectedTask = this.tasks?.find((task) => task.id === id);
+    const selectedTask = this.tasks.find((task) => task.id === id);
     if (selectedTask) {
       selectedTask.done = !selectedTask.done;
     }
   };
 
-  deleteTack = (id: string) => {
-    this.tasks = this.tasks?.filter((task) => task.id !== id);
+  deleteTask = (id: string) => {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   };
+
+  showTaskField = () => {
+    this.isShowTaskField = true
+  }
+
+  hideTaskField = () => {
+    this.isShowTaskField = false
+  }
+
+  getTasksFromLocaleStorage = () => {
+    const taskFromLS = localStorage.getItem('tasks')
+    if (taskFromLS){this.tasks = JSON.parse(taskFromLS)}
+  }
+
+  saveTasksToLocaleStorage = () => {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks))
+  }
 }
+
 
 const store = new Store();
 
