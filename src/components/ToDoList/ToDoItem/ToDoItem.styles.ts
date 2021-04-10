@@ -12,6 +12,7 @@ export const useStyles = makeStyles(() =>
       overflowWrap: 'normal',
       overflow: 'hidden',
       flexGrow: 1,
+      paddingTop: '8px'
     },
   })
 );
