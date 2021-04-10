@@ -4,7 +4,9 @@ export const useStyles = makeStyles(() =>
   createStyles({
     listItem: {
       display: 'flex',
-      padding: 0
+      padding: 0,
+      alignItems: 'flex-start',
+      marginBottom: '12px',
     },
     text: {
       overflowWrap: 'normal',

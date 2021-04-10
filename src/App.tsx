@@ -19,7 +19,6 @@ function App() {
     autorun(()=>store.saveTasksToLocaleStorage())
   }, []);
 
-  console.log('app');
   return (
     <div className="App">
       <Header>
